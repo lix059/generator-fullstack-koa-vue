@@ -2,10 +2,10 @@
   "name": "generator-fullstack-koa-vue",
   "version": "0.0.1",
   "description": "fullstack koa vue",
-  "homepage": "https://github.com/lix059/fullstack-vue2-koa2",
+  "homepage": "https://github.com/lix059/generator-fullstack-koa-vue",
   "author": {
     "name": "lixiong",
-    "email": "lix059@gmail.com",
+    "email": "lixiong@turingcat.com",
     "url": "https://github.com/lix059"
   },
   "files": [
