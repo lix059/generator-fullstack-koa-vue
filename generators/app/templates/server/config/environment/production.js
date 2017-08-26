@@ -17,12 +17,11 @@ module.exports = {
         },
         redis: {
             port: 6379,
-            //host: '127.0.0.1',
-            host:'172.16.45.254',
+            host: '127.0.0.1',
             db: 3,
             options: {
                 return_buffers: false,
-                //auth_pass: 'GuangtianTuringCatGood'
+                auth_pass: ''
             }
         }
     },

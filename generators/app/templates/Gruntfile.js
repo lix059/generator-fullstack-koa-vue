@@ -2,7 +2,6 @@
 var LIVERELOAD_PORT = 35729;
 var SERVER_PORT = 9000;
 var path = require('path');
-var moment=require('moment');
 
 // # Globbing
 // for performance reasons we're only matching one level down:
