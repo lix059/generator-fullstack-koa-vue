@@ -2,6 +2,9 @@
 var Generator = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
+var _ = require('lodash');
+var path = require('path');
+var mkdirp = require('mkdirp');
 
 module.exports = Generator.extend({
   prompting: function () {
