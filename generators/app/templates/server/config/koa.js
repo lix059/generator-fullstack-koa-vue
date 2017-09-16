@@ -9,12 +9,21 @@ const config = require('./environment/index.js');
 
 const app = new Koa();
 
-onerror(app);
-app.use(bodyParser());
-app.use(koaJson());
-app.use(resource(path.join(config.root, config.appPath)));
-if(app.env === 'development') {
-  app.use(logger());
+onerror(app)
+app.use(async (ctx, next) => {
+  console.log(ctx.path)
+  if (ctx.path === '//uploadImage') {
+    ctx.disableBodyParser = true       //not use bodyParser
+  } 
+  await next()
+})
+app.use(bodyParser({
+  // formLimit: '3mb'
+}))
+app.use(koaJson())
+app.use(resource(path.join(config.root, config.appPath)))
+if (app.env === 'development') {
+  app.use(logger())
 }
 
-module.exports = app;
+module.exports = app

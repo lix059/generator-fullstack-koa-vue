@@ -2,7 +2,7 @@
 
 // Development specific configuration
 // ==================================
-process.env.DEBUG= 'dev';
+process.env.DEBUG = 'dev';
 
 module.exports = {
     db: {
@@ -19,7 +19,7 @@ module.exports = {
         redis: {
             port: 6379,
             host: '127.0.0.1',
-            db: 3,
+            db: 0,
             options: {
                 return_buffers: false,
                 auth_pass: ''
