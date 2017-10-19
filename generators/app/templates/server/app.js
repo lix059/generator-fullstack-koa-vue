@@ -1,7 +1,7 @@
 const app = require('./config/koa.js');
 const config = require('./config/environment/index.js');
-const session = require('koa-session')
-const redisStore = require('koa-redis');
+const session = require('koa-session2')
+const Store = require('./Store.js')
 const query = require('./config/mysql-async.js');
 const http = require('http');
 const fs = require('fs');
@@ -11,13 +11,12 @@ const mongo = require('./config/mongo_db_connect.js');
 app.keys = ['keys', 'keykeys'];
 app.use(session({
   key: 'koa:sess',
-  maxAge: 8000000,
+  maxAge: config.session_time,
   overwrite: true,
   httpOnly: true,
   signed: true,
-  rolling: false,
-  store: redisStore(config.db.redis)
-}, app));
+  store: new Store(config.db.redis)
+}))
 
 app.use(async(ctx, next) => {
   ctx.execSql = query;
