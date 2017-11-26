@@ -1,5 +1,6 @@
 import * as types from './mutation_types.js'
 import Vue from 'vue'
+import axios from 'axios'
 
 export default {
     addTotalTime({commit}, time){
@@ -16,11 +17,9 @@ export default {
     },
 
     searchDoc({commit}) {
-        Vue.http.get("/doctors").then(
+        axios.get("/doctors").then(
             (res) => {
-                res.json().then(function(data){
-                    commit(types.SEARCH_DOC, data);
-                });
+                commit(types.SEARCH_DOC, res.data);
             },
             (failMsg) => {
                 alert('加载失败');

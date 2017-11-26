@@ -43,7 +43,7 @@ module.exports = function (grunt) {
                 options: {
                     script: 'server/app.js',
                     port: SERVER_PORT,
-                    debug: false
+                    debug: true
                 }
             }
         },
