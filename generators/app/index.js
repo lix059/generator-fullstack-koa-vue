@@ -144,15 +144,6 @@ module.exports = Generator.extend({
             }
         }
     );
-    this.fs.copy(
-        this.templatePath('test/'),
-        this.destinationPath('test/'),
-        {
-            globOptions:{
-              dot:true
-            }
-        }
-    );
   },
 
 
