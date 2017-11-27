@@ -92,12 +92,8 @@ module.exports = Generator.extend({
         this.destinationPath('.editorconfig')
     );
     this.fs.copy(
-        this.templatePath('.eslintignore'),
-        this.destinationPath('.eslintignore')
-    );
-    this.fs.copy(
-        this.templatePath('.eslintrc.js'),
-        this.destinationPath('.eslintrc.js')
+        this.templatePath('.postcssrc.js'),
+        this.destinationPath('.postcssrc.js')
     );
     this.fs.copy(
         this.templatePath('build/'),
